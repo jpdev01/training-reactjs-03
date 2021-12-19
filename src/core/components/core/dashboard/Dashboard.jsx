@@ -2,7 +2,6 @@ import React, { Component, useState } from 'react';
 import { NavbarComponent} from '../navbar/NavbarComponent';
 import InsertRecords from '../record/insert/InsertRecord';
 import { Switch, Route } from "react-router-dom";
-import Routes from './MainRoutes';
 
 class Dasahboard extends Component {
 
@@ -15,7 +14,6 @@ class Dasahboard extends Component {
         return (
             <div>
                 <NavbarComponent></NavbarComponent>
-                <Routes props={this.props}></Routes>
             </div>
         );
     }

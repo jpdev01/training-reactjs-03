@@ -5,7 +5,7 @@ import history from './history';
 
 class PortalUtil {
     
-    static baseUrl = "http://localhost:8080/strategicManagement";
+    static baseUrl = "http://localhost:8080/notion/api";
     // currentUser ainda nao foi implementado
     static currentUser: User;
     private static enterprise: Enterprise;

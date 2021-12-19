@@ -8,11 +8,11 @@ export default () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="" exact element={<Dasahboard/>} />
         <Route path="/login" exact element={<Login/>} />
-        {/* <Route path="/main" component={Dasahboard}>
-          <Route path="" component={Dasahboard} />
-          <Route path="/record" component={InsertRecords} />
-        </Route> */}
+        <Route path="/main" element={<Dasahboard/>} >
+          <Route path="" element={<Dasahboard/> } />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
