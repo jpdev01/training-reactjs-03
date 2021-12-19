@@ -11,11 +11,8 @@ class PortalUtil {
     private static enterprise: Enterprise;
 
     constructor(){
+        PortalUtil.enterprise = new Enterprise({name: "Notion"});
         console.log("PortalUtil is inicialized");
-        PortalUtil.createConnection().get('/config/enterprise').then(result => {
-            console.log(result);
-            PortalUtil.setEnterprise(new Enterprise(result.data));
-        });
     }
 
     static getBaseUrl = () => {
@@ -70,13 +67,8 @@ class PortalUtil {
         localStorage.removeItem('token');
     }
 
-    static async getEnterprise(): Promise<Enterprise>{
-        // apagar isso e trazer do back-end, xunxo apenas para teste.
-        return this.enterprise || 
-        await this.getEnterpriseByApi().then(result => {
-            PortalUtil.setEnterprise(result);
-            return result;
-        });
+    static getEnterprise(): Enterprise{
+        return this.enterprise;
     }
 
     static async getEnterpriseByApi(): Promise<Enterprise> {
