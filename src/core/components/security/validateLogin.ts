@@ -2,11 +2,11 @@ import PortalUtil from '../../shared/utils/PortalUtil';
 
 export default async function (login:
     {
-        login: string,
+        username: string,
         password: string
     }): Promise<any> {
     return PortalUtil.createConnection().post("/auth/login", {
-        login: login.login,
+        username: login.username,
         password: login.password
     })
     return false;

@@ -8,13 +8,13 @@ import PortalUtil from '../../shared/utils/PortalUtil';
 export default class Login extends Component {
 
     state = {
-        name: "",
+        username: "",
         password: "",
         redirect: false
     };
 
-    changeName = (event) => {
-        this.setState({ name: event.target.value });
+    changeUserName = (event) => {
+        this.setState({ username: event.target.value });
     }
 
     changePassword = (event) => {
@@ -23,7 +23,7 @@ export default class Login extends Component {
 
     login = () => {
         let promiseLogin = validateLogin({
-            login: this.state.name,
+            username: this.state.username,
             password: this.state.password
         });
         promiseLogin
@@ -48,15 +48,12 @@ export default class Login extends Component {
                     <div class="wrapper fadeInDown">
                         <div id="formContent">
 
-
-
                             <div class="fadeIn first">
                                 <img src={avatarIcon} id="icon" alt="User Icon" />
                             </div>
 
-
                             <form name="frmlogin">
-                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" value={this.name} onChange={this.changeName} />
+                                <input type="text" id="login" class="fadeIn second" name="username" placeholder="login" value={this.username} onChange={this.changeUserName} />
                                 <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" value={this.password} onChange={this.changePassword} />
                                 <input type="button" class="fadeIn fourth" value="Log In" onClick={this.login} />
                             </form>
