@@ -28,8 +28,9 @@ export default class Login extends Component {
         });
         promiseLogin
             .then(result => {
+                console.log(result.data);
                 PortalUtil.setUserToken(result.data.token);
-                this.props.history.push("/dashboard");
+                //this.props.history.push("/dashboard");
             })
             .catch(err => {
                 console.log(err);
@@ -59,7 +60,7 @@ export default class Login extends Component {
                             </form>
 
                             <div id="formFooter">
-                                <a class="underlineHover" href="#">Forgot Password?</a>
+                                <a class="underlineHover" href="">Forgot Password?</a>
                             </div>
 
                         </div>

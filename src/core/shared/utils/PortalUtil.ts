@@ -68,17 +68,6 @@ class PortalUtil {
         localStorage.removeItem('token');
     }
 
-    static getEnterprise(): Enterprise{
-        return this.enterprise;
-    }
-
-    static async getEnterpriseByApi(): Promise<Enterprise> {
-        return PortalUtil.createConnection().get('/config/enterprise');
-    }
-
-    static setEnterprise(newEnterprise: Enterprise): void {
-        this.enterprise = newEnterprise;
-    }
 }
 
 

@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react';
 import PortalUtil from '../../../shared/utils/PortalUtil';
 import NavbarService from '../../../shared/service/NavbarService';
-import './navbar-style.css';
 
 export class NavbarComponent extends Component {
 

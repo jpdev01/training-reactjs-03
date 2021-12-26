@@ -10,3 +10,5 @@ export default class InsertRecords extends Component {
         );
     }
 }
+
+//remover.
